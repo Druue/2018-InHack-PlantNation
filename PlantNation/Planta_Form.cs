@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PlantNation
 {
-    public partial class Form1 : Form
+    public partial class Planta_Form : Form
     {
-        public Form1()
+        public Planta_Form()
         {
             InitializeComponent();
         }

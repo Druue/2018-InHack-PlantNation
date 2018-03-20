@@ -1,6 +1,6 @@
 ﻿namespace PlantNation
 {
-    partial class Form1
+    partial class Planta_Form
     {
         /// <summary>
         /// Required designer variable.
