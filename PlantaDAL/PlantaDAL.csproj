@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{21DD43D7-47DB-4ED9-818E-B57272B3A93E}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <ProjectGuid>{2D7C12B5-89FA-4847-BC77-E67E2B777133}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PlantNation</RootNamespace>
-    <AssemblyName>PlantNation</AssemblyName>
+    <RootNamespace>PlantaDAL</RootNamespace>
+    <AssemblyName>PlantaDAL</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -39,48 +36,14 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Planta_Form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Planta_Form.Designer.cs">
-      <DependentUpon>Planta_Form.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\PlantaDAL\PlantaDAL.csproj">
-      <Project>{2d7c12b5-89fa-4847-bc77-e67e2b777133}</Project>
-      <Name>PlantaDAL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\PlantaLogic\PlantaLogic.csproj">
       <Project>{dc0628d4-ab4a-41d6-b9c9-3e4cd824b7fd}</Project>
       <Name>PlantaLogic</Name>
@@ -88,10 +51,6 @@
     <ProjectReference Include="..\PlantaModel\PlantaModel.csproj">
       <Project>{ddc414e8-a38a-426d-9a97-92a9962e80ef}</Project>
       <Name>PlantaModel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PlantaUI\PlantaUI.csproj">
-      <Project>{e7586be7-4205-4b5d-a358-cf9ef4771b74}</Project>
-      <Name>PlantaUI</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
