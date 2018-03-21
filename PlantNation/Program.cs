@@ -17,6 +17,13 @@ namespace PlantNation
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Planta_Form());
+
+            //..User accepted
+            //Send username to .form
+            //.form writes username in a label.
+            //After writing, the same method will run all the Form methods, and publish the information needed into the control
+            //The username from the Label will always be read and sent whenever a user edits/requests/adds information to the .txt
+            //Therefore all this.panel.Controls.Add(PlantaUI(username)); username is a string
         }
     }
 }

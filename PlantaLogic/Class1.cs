@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+/// <summary>
+/// All calculations done here!
+/// </summary>
 namespace PlantaLogic
 {
     public class Class1
