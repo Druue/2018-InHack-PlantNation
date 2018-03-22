@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Gradient.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Planta_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +68,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -96,6 +100,33 @@
       <Project>{e7586be7-4205-4b5d-a358-cf9ef4771b74}</Project>
       <Name>PlantaUI</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capture.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\God of plants rank.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Idk what to do about this but you can replace the plants rank icon with this.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minimize btn.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Murder rank thingy.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Peasant rank thingy.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plant rank.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Seed rank.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Serious Plant keeper rank.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

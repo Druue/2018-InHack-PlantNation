@@ -13,7 +13,6 @@ namespace PlantaDAL
 {
     public class PlantaDatabase
     {
-
         public bool Create_new_user(string filename)
         {
             //check if the name already exists
@@ -73,8 +72,7 @@ namespace PlantaDAL
         //DELETE PLANTS
         public void DeletePlant(PlantaModel.PlantaLibrary.DeletePlant lib, string username)
         {
-            //GetList("..\\..\\..\\" + username + ".txt");
-            GetList("..\\..\\..\\Kim.txt");
+            GetList("..\\..\\..\\" + username + ".txt");
             char delim = '+';
             for (int i = 0; i < allFiles.Count; i++)
             {
@@ -86,7 +84,7 @@ namespace PlantaDAL
         public void DeleteUserPlant(string nickname, string username)
         {
             List<string> userPlants = new List<string>();
-            StreamReader reader = new StreamReader("..\\..\\..\\Kim.txt");
+            StreamReader reader = new StreamReader("..\\..\\..\\" + username + ".txt");
             while (!reader.EndOfStream)
             {
                 string line = reader.ReadLine();
@@ -171,8 +169,6 @@ namespace PlantaDAL
             StreamWriter sw = File.AppendText("..\\..\\..\\Kim.txt");
             sw.WriteLine(addedLine);
             sw.Close();
-
-
         }
 
         static bool WordInLine(string line, string word)
@@ -185,7 +181,6 @@ namespace PlantaDAL
 
             return false;
         }
-
 
         public List<Journal> DB_getJournal(string filename)
         {
@@ -211,7 +206,5 @@ namespace PlantaDAL
             return journal;
 
         }
-        //..GetList(..) = Main reader, Reads the .txt of everything
-        //..SetList(..) = Main writer, Writes the .txt of user
     }
 }

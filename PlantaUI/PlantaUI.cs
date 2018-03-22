@@ -132,7 +132,8 @@ namespace PlantaUI
         public Control showBoxTitle(Label boxTitle)
         {
             boxTitle.Text = "Choose a plant";
-            boxTitle.Font = new Font("Segoe UI Emoji", 12);
+            boxTitle.Font = new Font("Segoe UI Emoji", 12, FontStyle.Bold);
+            boxTitle.ForeColor = Color.Black;
             boxTitle.AutoSize = true;
             boxTitle.Location = new Point(45, 30);
             return boxTitle;
@@ -141,7 +142,8 @@ namespace PlantaUI
         public Control showNicknameTitle(Label nickname)
         {
             nickname.Text = "Write a nickname";
-            nickname.Font = new Font("Segoe UI Emoji", 12);
+            nickname.Font = new Font("Segoe UI Emoji", 12, FontStyle.Bold);
+            nickname.ForeColor = Color.Black;
             nickname.AutoSize = true;
             nickname.Location = new Point(250, 30);
             return nickname;
@@ -168,7 +170,8 @@ namespace PlantaUI
                 "Plantkind has not been treated with the respect they deserve and so we have been sent here to bring Humanity into line. " + new_line +
                 "We bring an app - consider this your first warning - that will assist you with staying in tune with your plants needs. ";
 
-            about.Font = new Font("Segou UI Emoji", 12);
+            about.Font = new Font("Segou UI Emoji", 12, FontStyle.Bold);
+            about.ForeColor = Color.Black;
 
             return about;
         }

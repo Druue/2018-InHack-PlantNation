@@ -46,9 +46,12 @@ namespace PlantNation
             Label authorization = new Label();
             authorization.Visible = true;
             authorization.Enabled = true;
-            authorization.Text = "Welcome to The Plant nation! Enter your name. If you are here for the first time 'create a new account'.";
+            authorization.Text = "Welcome to The Plant nation!\n Enter your name.\n If you are here for the first time 'create a new account'.";
+            authorization.Font = new Font("Segoe UI Emoji", 12, FontStyle.Bold);
+            authorization.ForeColor = Color.Black;
             authorization.AutoSize = true;
-            authorization.Location = new Point(100, 100);
+            authorization.TextAlign = ContentAlignment.MiddleCenter;
+            authorization.Location = new Point(60, 20);
             Panel_content.Controls.Add(authorization);
 
             //making visible the textbox
@@ -140,6 +143,7 @@ namespace PlantNation
         private void lbl_Dashboard_Click(object sender, EventArgs e)
         {
             showDashboard();
+            this.lbl_currentTab.Text = "Dashboard";
         }
 
 
@@ -152,8 +156,6 @@ namespace PlantNation
             this.Panel_content.Controls.Clear();
             this.lbl_currentTab.Text = "Add plants";
             string username = lbl_username.Text;
-
-            // combobox.SelectedIndexChanged += new EventHandler(addBox_SelectedIndexChanged);
 
             PlantaDisplay dis = new PlantaDisplay();
             this.Panel_content.Controls.Add(dis.AddPlant(username, combobox));
@@ -176,7 +178,7 @@ namespace PlantNation
             PlantaDatabase db = new PlantaDatabase();
             string plantname = combobox.Text;
             string nickname = txt_nickname.Text;
-            string username = "Kim";//lbl_username.Text;
+            string username = lbl_username.Text;
             bool exists = db.nicknameExists(nickname, username);
 
             if (exists)
@@ -218,7 +220,7 @@ namespace PlantNation
         {
             PlantaDatabase db = new PlantaDatabase();
             string plantnickname = combobox.Text;
-            string username = "Kim";//lbl_username.Text;
+            string username = lbl_username.Text;
 
             try
             {
@@ -239,6 +241,7 @@ namespace PlantNation
         private void showDashboard()
         {
             this.Panel_content.Controls.Clear();
+            this.lbl_currentTab.Text = "Dashboard";
             string fileName = lbl_username.Text;
             PlantaDisplay ui = new PlantaDisplay();
 
@@ -278,6 +281,7 @@ namespace PlantNation
         private void lbl_about_Click(object sender, EventArgs e)
         {
             this.Panel_content.Controls.Clear();
+            this.lbl_currentTab.Text = "About";
             PlantaDisplay display = new PlantaDisplay();
             this.Panel_content.Controls.Add(display.AboutPlantNation());
             this.Panel_content.Location = new System.Drawing.Point(200, 150);
@@ -285,10 +289,16 @@ namespace PlantNation
         private void lbl_ranks_Click(object sender, EventArgs e)
         {
             Panel_content.Controls.Clear();
-            //  string filename = lbl_username.Text + ".txt";
-            Panel_content.Controls.Add(PlantaDisplay.ShowJournal("Nadia.txt"));
+            this.lbl_currentTab.Text = "Journal";
+            string filename = lbl_username.Text + ".txt";
+            Panel_content.Controls.Add(PlantaDisplay.ShowJournal(filename));
+            
 
+        }
 
+        private void gradientPanel_background_Paint(object sender, PaintEventArgs e)
+        {
+           gradientPanel_background.SendToBack();
         }
     }
 }
