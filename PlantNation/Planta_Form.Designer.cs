@@ -75,6 +75,7 @@
             this.lbl_about.TabIndex = 9;
             this.lbl_about.Text = "About";
             this.lbl_about.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_about.Click += new System.EventHandler(this.lbl_about_Click);
             // 
             // lbl_ranks
             // 

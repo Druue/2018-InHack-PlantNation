@@ -178,6 +178,13 @@ namespace PlantNation
             this.Panel_content.Controls.Add(groupbox2);
             this.Panel_content.Controls.Add(groupbox3);
         }
+        private void lbl_about_Click(object sender, EventArgs e)
+        {
+            this.Panel_content.Controls.Clear();
+            PlantaDisplay display = new PlantaDisplay();
+            this.Panel_content.Controls.Add(display.AboutPlantNation());
+            this.Panel_content.Location = new System.Drawing.Point(200, 150);
+        }
     }
 }
 
