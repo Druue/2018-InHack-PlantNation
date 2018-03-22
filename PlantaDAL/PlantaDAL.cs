@@ -42,11 +42,11 @@ namespace PlantaDAL
         List<string> allFiles = new List<string>();
         public void userPlants(string fileName, PlantaLibrary.UserDashboard lib)
         {
-            GetList(fileName);
+            GetList("..\\..\\"+fileName+".txt");
             for (int i = 0; i < allFiles.Count; i++)
             {
                 string[] files = allFiles.ToArray();
-                string[] userPlants = files[i].Split('€');
+                string[] userPlants = files[i].Split('+');
                 lib.SetNick(userPlants[0]);
                 lib.SetName(userPlants[1]);
                 lib.SetInterval(userPlants[2]);
