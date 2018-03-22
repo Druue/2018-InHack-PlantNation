@@ -159,9 +159,9 @@ namespace PlantNation
             groupbox2.Location = new Point(10, 80);
             groupbox3.Location = new Point(10, 160);
 
-            groupbox1.Size = new Size(100, 300);
-            groupbox2.Size = new Size(100, 300);
-            groupbox3.Size = new Size(100, 300);
+            groupbox1.Size = new Size(600, 100);
+            groupbox2.Size = new Size(600, 120);
+            groupbox3.Size = new Size(600, 140);
             Label labelPlant1 = new Label();
             Label labelPlant2 = new Label();
             Label labelPlant3 = new Label();
@@ -174,6 +174,12 @@ namespace PlantNation
             picBox1.Location = new Point(5, 40);
             picBox2.Location = new Point(5, 40);
             picBox3.Location = new Point(5, 40);
+            Button button1 = new Button();
+            Button button2 = new Button();
+            Button button3 = new Button();
+            button1.Location = new Point(10, 10);
+            button2.Location = new Point(300, 100);
+            button3.Location = new Point(300, 100);
             int boxLimit = 0;
             int count = 0;
             for (int i = 0; i < plantNick.Count; i++)
@@ -182,8 +188,9 @@ namespace PlantNation
                 {
                     labelPlant1.Text = plantNick[i];
                     groupbox1.Controls.Add(labelPlant1);
-                    picBox1.Image = Properties.Resources.//;
+                    //picBox1.Image = Properties.Resources.;
                     groupbox1.Controls.Add(picBox1);
+                    groupbox1.Controls.Add(button1);
                     count++;
                 }
             }
@@ -194,9 +201,9 @@ namespace PlantNation
                 {
                     labelPlant2.Text = plantNick[i];
                     groupbox2.Controls.Add(labelPlant2);
-                    picBox2.Controls.Add();
-                    picBox2.Image = Properties.Resources.;
+                    //picBox2.Image = Properties.Resources.;
                     groupbox2.Controls.Add(picBox2);
+                    groupbox2.Controls.Add(button2);
                     boxLimit++;
                     continue;
                 }
@@ -204,14 +211,13 @@ namespace PlantNation
                 {
                     labelPlant3.Text = plantNick[i];
                     groupbox3.Controls.Add(labelPlant3);
-                    picBox3.Controls.Add();
-                    picBox3.Image = Properties.Resources.;
-                    groupbox1.Controls.Add(picBox3);
+                    //picBox3.Image = Properties.Resources.;
+                    groupbox3.Controls.Add(picBox3);
+                    groupbox3.Controls.Add(button3);
                     boxLimit++;
                     continue;
                 }
             }
-
 
             this.Panel_content.Controls.Add(groupbox1);
             this.Panel_content.Controls.Add(groupbox2);
