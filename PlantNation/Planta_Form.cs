@@ -16,6 +16,7 @@ namespace PlantNation
 {
     public partial class Planta_Form : Form
     {
+        private static Planta_Form instance;
         public Planta_Form()
         {
             InitializeComponent();
@@ -23,12 +24,13 @@ namespace PlantNation
             this.DoubleBuffered = true;
             enableDoubleBuff(Panel_content);
         }
+        public static void enableDoubleBuff(Control cont)
+        {
+            System.Reflection.PropertyInfo DemoProp = typeof(System.Windows.Forms.Control).GetProperty("DoubleBuffered",
+            System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            DemoProp.SetValue(cont, true, null);
+        }
     }
-    public static void enableDoubleBuff(Control cont)
-    {
-        System.Reflection.PropertyInfo DemoProp = typeof(System.Windows.Forms.Control).GetProperty("DoubleBuffered",
-        System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-        DemoProp.SetValue(cont, true, null);
-    }
+
 }
 
