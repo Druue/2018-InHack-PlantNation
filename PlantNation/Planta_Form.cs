@@ -90,7 +90,7 @@ namespace PlantNation
             else
             {
                 string name = name_auth.Text;
-                string filename = name + ".txt";
+                string filename = "..\\..\\..\\" + name + ".txt";
                 PlantaDatabase db = new PlantaDatabase();
                 bool is_exist = db.Create_new_user(filename);
 
@@ -119,7 +119,7 @@ namespace PlantNation
             {
 
                 string name = name_auth.Text;
-                string filename = name + ".txt";
+                string filename = "..\\..\\..\\" + name + ".txt";
 
                 PlantaDatabase db = new PlantaDatabase();
                 bool is_exist = db.Log_new_user(filename);
@@ -285,7 +285,7 @@ namespace PlantNation
         private void lbl_ranks_Click(object sender, EventArgs e)
         {
             Panel_content.Controls.Clear();
-            string filename = lbl_username.Text + ".txt";
+            string filename = "..\\..\\..\\" + lbl_username.Text + ".txt";
             Panel_content.Controls.Add(PlantaDisplay.ShowJournal(filename));
 
 
