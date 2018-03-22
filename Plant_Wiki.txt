@@ -1,0 +1,10 @@
+Sunflower€HelianthusAnnuus€2€25€SunDry
+Lavender€Lavandula€2€10€SunDry
+Tulip€Tulipa€5€15€SunDry
+Carnation€DianthusCaryophyllus€3€17€SunDry
+Daffodil€Narcissus€3€20€Sun
+Dahlia€Dahlia€2€25€Sun
+SwordLily€Gladiolus€2€10€Sun
+Hydrangea€Hydrangea€1€15€Sun
+Orchid€Orchidaceae€4€10€SunHumid
+AsiaticLily€Lillium€7€17€SunShade
