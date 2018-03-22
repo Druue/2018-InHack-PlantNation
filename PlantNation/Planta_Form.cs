@@ -90,7 +90,7 @@ namespace PlantNation
             else
             {
                 string name = name_auth.Text;
-                string filename = name + ".txt";
+                string filename = "..\\..\\..\\" + name + ".txt";
                 PlantaDatabase db = new PlantaDatabase();
                 bool is_exist = db.Create_new_user(filename);
 
@@ -118,7 +118,7 @@ namespace PlantNation
             {
 
                 string name = name_auth.Text;
-                string filename = name + ".txt";
+                string filename = "..\\..\\..\\" + name + ".txt";
 
                 PlantaDatabase db = new PlantaDatabase();
                 bool is_exist = db.Log_new_user(filename);
@@ -138,6 +138,100 @@ namespace PlantNation
         private void lbl_Dashboard_Click(object sender, EventArgs e)
         {
             showDashboard();
+        }
+
+
+        private TextBox txt_nickname = new TextBox();
+        private ComboBox combobox = new ComboBox();
+
+        //ADD PLANTS
+        private void lbl_add_Click(object sender, EventArgs e)
+        {
+            this.Panel_content.Controls.Clear();
+            this.lbl_currentTab.Text = "Add plants";
+            string username = lbl_username.Text;
+
+            // combobox.SelectedIndexChanged += new EventHandler(addBox_SelectedIndexChanged);
+
+            PlantaDisplay dis = new PlantaDisplay();
+            this.Panel_content.Controls.Add(dis.AddPlant(username, combobox));
+
+            Button btn_confirm = new Button();
+            btn_confirm.Click += new EventHandler(btn_confirm_Clicked);
+            this.Panel_content.Controls.Add(dis.showConfirmButton(btn_confirm));
+
+            Label lbl_addBoxTitle = new Label();
+            this.Panel_content.Controls.Add(dis.showBoxTitle(lbl_addBoxTitle));
+
+            Label lbl_NicknameTitle = new Label();
+            this.Panel_content.Controls.Add(dis.showNicknameTitle(lbl_NicknameTitle));
+
+            this.Panel_content.Controls.Add(dis.showNicknameBox(txt_nickname));
+        }
+
+        private void btn_confirm_Clicked(object sender, EventArgs e)
+        {
+            PlantaDatabase db = new PlantaDatabase();
+            string plantname = combobox.Text;
+            string nickname = txt_nickname.Text;
+            string username = "Kim";//lbl_username.Text;
+            bool exists = db.nicknameExists(nickname, username);
+
+            if (exists)
+            {
+                MessageBox.Show("This already exists");
+                return;
+            }
+
+            try
+            {
+                db.AddUserPlant(plantname, nickname, username);
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show(exp.Message, "An error has occured (╯°□°）╯︵ ┻━┻", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            MessageBox.Show("Plant has been added");
+        }
+
+        private void lbl_delete_Click(object sender, EventArgs e)
+        {
+            this.Panel_content.Controls.Clear();
+            this.lbl_currentTab.Text = "Delete plant";
+            string username = lbl_username.Text;
+
+            PlantaDisplay dis = new PlantaDisplay();
+            this.Panel_content.Controls.Add(dis.DeletePlant(username, combobox));
+
+            Label lbl_addBoxTitle = new Label();
+            this.Panel_content.Controls.Add(dis.showBoxTitle(lbl_addBoxTitle));
+
+            Button btn_delete = new Button();
+            btn_delete.Click += new EventHandler(btn_delete_Clicked);
+            this.Panel_content.Controls.Add(dis.showConfirmButton(btn_delete));
+        }
+
+        private void btn_delete_Clicked(object sender, EventArgs e)
+        {
+            PlantaDatabase db = new PlantaDatabase();
+            string plantnickname = combobox.Text;
+            string username = "Kim";//lbl_username.Text;
+
+            try
+            {
+                db.DeleteUserPlant(plantnickname, username);
+            }
+
+            catch (Exception exp)
+            {
+                MessageBox.Show(exp.Message, "An error has occured (╯°□°）╯︵ ┻━┻", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            MessageBox.Show("Plant has been deleted");
+            combobox.DataSource = null;
+            PlantaDisplay dis = new PlantaDisplay();
+            this.Panel_content.Controls.Add(dis.DeletePlant(username, combobox));
         }
 
         private void showDashboard()
@@ -162,6 +256,10 @@ namespace PlantNation
             groupbox1.Size = new Size(600, 100);
             groupbox2.Size = new Size(600, 120);
             groupbox3.Size = new Size(600, 140);
+        
+
+    
+
             Label labelPlant1 = new Label();
             Label labelPlant2 = new Label();
             Label labelPlant3 = new Label();
@@ -229,6 +327,14 @@ namespace PlantNation
             PlantaDisplay display = new PlantaDisplay();
             this.Panel_content.Controls.Add(display.AboutPlantNation());
             this.Panel_content.Location = new System.Drawing.Point(200, 150);
+        }
+        private void lbl_ranks_Click(object sender, EventArgs e)
+        {
+            Panel_content.Controls.Clear();
+            string filename = "..\\..\\..\\" + lbl_username.Text + ".txt";
+            Panel_content.Controls.Add(PlantaDisplay.ShowJournal(filename));
+
+
         }
     }
 }
