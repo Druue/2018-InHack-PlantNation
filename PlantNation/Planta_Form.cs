@@ -41,7 +41,7 @@ namespace PlantNation
         public void userAuth()
         {
             Panel_content.Controls.Clear();
-
+            Panel_menu.Enabled = false;
             //creation the label with "Welcome button"
             Label authorization = new Label();
             authorization.Visible = true;
