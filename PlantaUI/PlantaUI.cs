@@ -18,7 +18,8 @@ namespace PlantaUI
         public static Control ShowJournal(string filename)
         {
             List<Journal> journals = new List<Journal>();
-            journals = PlantaDatabase.DB_getJournal(filename);
+            PlantaDatabase db = new PlantaDatabase();
+            journals = db.DB_getJournal(filename);
 
             
             ListView journalListView = new ListView();

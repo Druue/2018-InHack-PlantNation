@@ -187,7 +187,7 @@ namespace PlantaDAL
         }
 
 
-        public static List<Journal> DB_getJournal(string filename)
+        public List<Journal> DB_getJournal(string filename)
         {
             List<Journal> journal = new List<Journal>();
 
