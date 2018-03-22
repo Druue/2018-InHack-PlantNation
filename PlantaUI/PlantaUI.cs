@@ -63,6 +63,19 @@ namespace PlantaUI
 
         }
 
+        public static Control ShowRanks()
+        {
+            Label ranks = new Label();
+
+            ranks.Height = 200;
+            ranks.Width = 500;
+            ranks.Location = new Point(100, 100);
+            ranks.Text = " 9000 -> Master of the plantivere \n 1000 -> God of plants \n 500 -> Serious plantkeeper \n 250 -> Plant \n 100 -> Sprout \n 50 -> Seed \n 0 -> Peasant \n 10 -> Murderer";
+            ranks.Font = new Font("Segou UI Emoji", 10);
+
+            return ranks;
+        }
+
         //When asking for information from database, 2 things to keep in mind
         //When calling the db, You have to declare the method of the model and send it + the username if not more!
         //The db will fill the model method and then it is possible to grab that information from here using the Get model method.

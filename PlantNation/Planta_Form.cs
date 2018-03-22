@@ -46,7 +46,7 @@ namespace PlantNation
             Label authorization = new Label();
             authorization.Visible = true;
             authorization.Enabled = true;
-            authorization.Text = "Welcome to The Plant nation! Enter your name. If you are here for the first time 'create a new account'.";
+            authorization.Text = "Welcome to The PlantNation! Enter your name. If you are here for the first time 'create a new account'.";
             authorization.AutoSize = true;
             authorization.Location = new Point(100, 100);
             Panel_content.Controls.Add(authorization);
@@ -288,6 +288,13 @@ namespace PlantNation
             string filename = lbl_username.Text + ".txt";
             Panel_content.Controls.Add(PlantaDisplay.ShowJournal(filename));
 
+
+        }
+
+        private void lbl_journal_Click(object sender, EventArgs e)
+        {
+            Panel_content.Controls.Clear();
+            Panel_content.Controls.Add(PlantaDisplay.ShowRanks());
 
         }
     }

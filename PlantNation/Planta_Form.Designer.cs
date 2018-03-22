@@ -102,6 +102,7 @@
             this.lbl_journal.TabIndex = 7;
             this.lbl_journal.Text = "Ranks";
             this.lbl_journal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_journal.Click += new System.EventHandler(this.lbl_journal_Click);
             // 
             // lbl_delete
             // 
