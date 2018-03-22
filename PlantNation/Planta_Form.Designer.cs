@@ -68,7 +68,6 @@
             // 
             this.lbl_about.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbl_about.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_about.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_about.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_about.Location = new System.Drawing.Point(12, 365);
             this.lbl_about.Name = "lbl_about";
@@ -81,7 +80,6 @@
             // 
             this.lbl_ranks.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbl_ranks.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_ranks.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_ranks.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ranks.Location = new System.Drawing.Point(12, 314);
             this.lbl_ranks.Name = "lbl_ranks";
@@ -94,7 +92,6 @@
             // 
             this.lbl_journal.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbl_journal.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_journal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_journal.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_journal.Location = new System.Drawing.Point(12, 263);
             this.lbl_journal.Name = "lbl_journal";
@@ -107,7 +104,6 @@
             // 
             this.lbl_delete.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbl_delete.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_delete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_delete.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_delete.Location = new System.Drawing.Point(12, 212);
             this.lbl_delete.Name = "lbl_delete";
@@ -120,7 +116,6 @@
             // 
             this.lbl_change.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbl_change.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_change.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_change.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_change.Location = new System.Drawing.Point(12, 161);
             this.lbl_change.Name = "lbl_change";
@@ -133,7 +128,6 @@
             // 
             this.lbl_add.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbl_add.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_add.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_add.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_add.Location = new System.Drawing.Point(12, 110);
             this.lbl_add.Name = "lbl_add";
@@ -146,7 +140,6 @@
             // 
             this.lbl_Dashboard.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbl_Dashboard.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Dashboard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_Dashboard.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Dashboard.Location = new System.Drawing.Point(12, 59);
             this.lbl_Dashboard.Name = "lbl_Dashboard";
@@ -173,7 +166,6 @@
             this.lbl_minimize.AutoSize = true;
             this.lbl_minimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.lbl_minimize.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_minimize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_minimize.Location = new System.Drawing.Point(799, 0);
             this.lbl_minimize.Name = "lbl_minimize";
             this.lbl_minimize.Size = new System.Drawing.Size(18, 19);
@@ -223,7 +215,6 @@
             this.lbl_close.AutoSize = true;
             this.lbl_close.BackColor = System.Drawing.Color.Red;
             this.lbl_close.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_close.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_close.ImageAlign = System.Drawing.ContentAlignment.TopRight;
             this.lbl_close.Location = new System.Drawing.Point(1029, 12);
             this.lbl_close.Name = "lbl_close";
@@ -231,6 +222,7 @@
             this.lbl_close.TabIndex = 2;
             this.lbl_close.Text = "X";
             this.lbl_close.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lbl_close.Click += new System.EventHandler(this.lbl_close_Click);
             // 
             // Planta_Form
             // 

@@ -30,6 +30,11 @@ namespace PlantNation
             System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
             DemoProp.SetValue(cont, true, null);
         }
+
+        private void lbl_close_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 
 }
