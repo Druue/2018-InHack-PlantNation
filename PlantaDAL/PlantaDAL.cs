@@ -13,8 +13,7 @@ namespace PlantaDAL
 {
     public class PlantaDatabase
     {
-    public class PlantaDatabase
-    {
+
         public bool Create_new_user(string filename)
         {
             //check if the name already exists
@@ -52,7 +51,7 @@ namespace PlantaDAL
                 lib.SetName(userPlants[1]);
                 lib.SetInterval(userPlants[2]);
                 lib.SetLastWatered(userPlants[3]);
-                lib.SetIconNr(userPlants[4]);            
+                lib.SetIconNr(userPlants[4]);
             }
 
         }
@@ -72,6 +71,5 @@ namespace PlantaDAL
                 reader.Close();
             }
         }
-        //public void 
     }
 }

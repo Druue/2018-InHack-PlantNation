@@ -32,18 +32,18 @@ namespace PlantaLogic
                         needWater[countWaterToday] = i;
                         countWaterToday++;
                     }
-                    else if(difference - int.Parse(interval[i]) <0)
+                    else if (difference - int.Parse(interval[i]) < 0)
                     {
                         emergencyWater[countEmergency] = i;
                         countEmergency++;
                     }
                 }
                 lib.SetEmergencyList(emergencyWater);
-                lib.SetWaterToday(needWater);     
+                lib.SetWaterToday(needWater);
             }
         }
-    class PlantaLogic
-    {
+        //Finish with UI layer, connect to db.
+        /*
         public class isDead
         {
             bool[] isdead = new bool[5];
@@ -55,21 +55,19 @@ namespace PlantaLogic
             int points_watered = 50;
             int points_missed = -25;
             int points_death = -100;
-
+            
             public bool deadPlants()
             {
                 for (int i = 0; i < isdead.Length; i++)
                 {
-
-                    string[] split = isdead[i].Split("€");
-                    int watering_interval = Int32.Parse(split[2]);
+                    int watering_interval = ;
 
                     //short interval plants
                     if (watering_interval <= 4)
                     {
                         isdead[i] = shortInterval(last_watered, watering_interval);
 
-                        if (isdead)
+                        if (isdead[i])
                         {
                             dead_count++;
                             points += points_death;
@@ -79,7 +77,7 @@ namespace PlantaLogic
                     else
                     {
                         isdead[i] = longInterval(last_watered, watering_interval);
-                        if (isdead)
+                        if (isdead[i])
                         {
 
                             dead_count++;
@@ -94,9 +92,10 @@ namespace PlantaLogic
             {
                 //maximum days without watering
                 int max_days = interval * 4;
-
+                
                 //determining the time
-                DateTime today = DateTime.Today;
+                int today = DateTime.Today.DayOfYear;
+
                 int time_lastWater = today - last_watered;
 
                 //dead
@@ -116,8 +115,8 @@ namespace PlantaLogic
                 //maximum days without watering
                 int max_days = interval * 2;
 
-                //determining the time
-                DateTime today = DateTime.Today;
+                int today = DateTime.Today.DayOfYear;
+
                 int time_lastWater = today - last_watered;
 
                 //dead
@@ -131,6 +130,6 @@ namespace PlantaLogic
                     return false;
                 }
             }
-        }
+        }*/
     }
 }

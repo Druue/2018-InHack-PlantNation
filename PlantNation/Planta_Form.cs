@@ -102,7 +102,7 @@ namespace PlantNation
                 {
                     //the file was created with this name
 
-                    ShowDashboard();
+                    showDashboard();
                     lbl_username.Text = name;
                 }
             }
@@ -127,7 +127,7 @@ namespace PlantNation
                 if (is_exist)
                 {
 
-                    ShowDashboard();
+                    showDashboard();
                     lbl_username.Text = name;
                 }
                 else
@@ -179,6 +179,5 @@ namespace PlantNation
             this.Panel_content.Controls.Add(groupbox3);
         }
     }
-
 }
 
