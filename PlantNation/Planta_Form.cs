@@ -101,9 +101,10 @@ namespace PlantNation
                 else
                 {
                     //the file was created with this name
-
+                    Panel_menu.Enabled = true;
                     showDashboard();
                     lbl_username.Text = name;
+
                 }
             }
         }
@@ -126,7 +127,7 @@ namespace PlantNation
 
                 if (is_exist)
                 {
-
+                    Panel_menu.Enabled = true;
                     showDashboard();
                     lbl_username.Text = name;
                 }
