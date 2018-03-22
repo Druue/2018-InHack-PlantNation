@@ -30,6 +30,15 @@ namespace PlantNation
             System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
             DemoProp.SetValue(cont, true, null);
         }
+
+        private void lbl_ranks_Click(object sender, EventArgs e)
+        {
+            Panel_content.Controls.Clear();
+          //  string filename = lbl_username.Text + ".txt";
+            Panel_content.Controls.Add(PlantaDisplay.ShowJournal("Nadia.txt"));
+
+
+        }
     }
 
 }
