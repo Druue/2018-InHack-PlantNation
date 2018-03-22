@@ -233,7 +233,9 @@ namespace PlantNation
             PlantaDisplay dis = new PlantaDisplay();
             this.Panel_content.Controls.Add(dis.DeletePlant(username, combobox));
         }
-
+        private string groupboxIndex1;
+        private string groupboxIndex2;
+        private string groupboxIndex3;
         private void showDashboard()
         {
             this.Panel_content.Controls.Clear();
@@ -258,14 +260,16 @@ namespace PlantNation
             groupbox3.Size = new Size(600, 140);
         
 
-    
 
             Label labelPlant1 = new Label();
             Label labelPlant2 = new Label();
             Label labelPlant3 = new Label();
-            labelPlant1.Location = new Point(45, 45);
-            labelPlant2.Location = new Point(45, 45);
-            labelPlant3.Location = new Point(45, 45);
+            labelPlant1.Location = new Point(105, 45);
+            labelPlant2.Location = new Point(105, 45);
+            labelPlant3.Location = new Point(105, 45);
+            labelPlant1.Font = new Font("Segou UI Emoji", 14);
+            labelPlant2.Font = new Font("Segou UI Emoji", 14);
+            labelPlant3.Font = new Font("Segou UI Emoji", 14);
             PictureBox picBox1 = new PictureBox();
             PictureBox picBox2 = new PictureBox();
             PictureBox picBox3 = new PictureBox();
@@ -275,52 +279,101 @@ namespace PlantNation
             Button button1 = new Button();
             Button button2 = new Button();
             Button button3 = new Button();
-            button1.Location = new Point(10, 10);
-            button2.Location = new Point(300, 100);
-            button3.Location = new Point(300, 100);
+            button1.Location = new Point(430, 27);
+            button2.Location = new Point(430, 43);
+            button3.Location = new Point(430, 43);
+            button1.Text = "Water me pls";
+            button2.Text = "Water me pls";
+            button3.Text = "Water me pls";
+            button1.Size = new Size(100,50);
+            button2.Size = new Size(100, 50);
+            button3.Size = new Size(100, 50);
+            button1.BackColor = Color.LightSkyBlue;
+            button2.BackColor = Color.LightSkyBlue;
+            button3.BackColor = Color.LightSkyBlue;
+            button1.Click += new EventHandler(button1_Clicked);
+            button2.Click += new EventHandler(button2_Clicked);
+            button3.Click += new EventHandler(button3_Clicked);
             int boxLimit = 0;
             int count = 0;
-            for (int i = 0; i < plantNick.Count; i++)
+            bool isEmpty = !waterEmergency.Any();
+
+            if (!isEmpty)
             {
-                if (waterEmergency[count] == i && count < 1)
+                for (int i = 0; i < plantNick.Count; i++)
                 {
-                    labelPlant1.Text = plantNick[i];
-                    groupbox1.Controls.Add(labelPlant1);
-                    //picBox1.Image = Properties.Resources.;
-                    groupbox1.Controls.Add(picBox1);
-                    groupbox1.Controls.Add(button1);
-                    count++;
+                    if (waterEmergency[count] == i && count < 1)
+                    {
+                        labelPlant1.Text = plantNick[i];
+                        groupbox1.Controls.Add(labelPlant1);
+                        //picBox1.Image = Properties.Resources.;
+                        groupbox1.Controls.Add(picBox1);
+                        groupbox1.Controls.Add(button1);
+                        groupboxIndex1 = plantNick[i];
+                        count++;
+                    }
                 }
             }
+
             count = 0;
-            for (int i = 0; i < plantNick.Count; i++)
+            isEmpty = !waterToday.Any();
+            if (!isEmpty)
             {
-                if (waterToday[count] == i && boxLimit < 1)
+                for (int i = 0; i < plantNick.Count; i++)
                 {
-                    labelPlant2.Text = plantNick[i];
-                    groupbox2.Controls.Add(labelPlant2);
-                    //picBox2.Image = Properties.Resources.;
-                    groupbox2.Controls.Add(picBox2);
-                    groupbox2.Controls.Add(button2);
-                    boxLimit++;
-                    continue;
-                }
-                if (waterToday[count] == i && boxLimit < 1)
-                {
-                    labelPlant3.Text = plantNick[i];
-                    groupbox3.Controls.Add(labelPlant3);
-                    //picBox3.Image = Properties.Resources.;
-                    groupbox3.Controls.Add(picBox3);
-                    groupbox3.Controls.Add(button3);
-                    boxLimit++;
-                    continue;
+                    if (waterToday[count] == i && boxLimit < 1)
+                    {
+                        labelPlant2.Text = plantNick[i];
+                        groupbox2.Controls.Add(labelPlant2);
+                        //picBox2.Image = Properties.Resources.;
+                        groupbox2.Controls.Add(picBox2);
+                        groupbox2.Controls.Add(button2);
+                        groupboxIndex2 = plantNick[i];
+                        boxLimit++;
+                        continue;
+                    }
+                    if (waterToday[count] == i && boxLimit < 1)
+                    {
+                        labelPlant3.Text = plantNick[i];
+                        groupbox3.Controls.Add(labelPlant3);
+                        //picBox3.Image = Properties.Resources.;
+                        groupbox3.Controls.Add(picBox3);
+                        groupbox3.Controls.Add(button3);
+                        groupboxIndex3 = plantNick[i];
+                        boxLimit++;
+                        continue;
+                    }
                 }
             }
+
 
             this.Panel_content.Controls.Add(groupbox1);
             this.Panel_content.Controls.Add(groupbox2);
             this.Panel_content.Controls.Add(groupbox3);
         }
+
+        private void button3_Clicked(object sender, EventArgs e)
+        {
+            PlantaDatabase db = new PlantaDatabase();
+            string filename = "..\\..\\..\\" + lbl_username.Text + ".txt";
+            db.plantWatered(groupboxIndex3, filename);
+        }
+
+        private void button2_Clicked(object sender, EventArgs e)
+        {
+            PlantaDatabase db = new PlantaDatabase();
+            string filename = "..\\..\\..\\" + lbl_username.Text + ".txt";
+            db.plantWatered(groupboxIndex2, filename);
+        }
+
+        private void button1_Clicked(object sender, EventArgs e)
+        {
+            PlantaDatabase db = new PlantaDatabase();
+            string filename = "..\\..\\..\\" + lbl_username.Text + ".txt";
+            db.plantWatered(groupboxIndex1, filename); 
+
+        }
+
         private void lbl_about_Click(object sender, EventArgs e)
         {
             this.Panel_content.Controls.Clear();
@@ -333,8 +386,6 @@ namespace PlantNation
             Panel_content.Controls.Clear();
             string filename = "..\\..\\..\\" + lbl_username.Text + ".txt";
             Panel_content.Controls.Add(PlantaDisplay.ShowJournal(filename));
-
-
         }
     }
 }

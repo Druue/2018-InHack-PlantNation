@@ -40,7 +40,7 @@ namespace PlantaDAL
         List<string> allFiles = new List<string>();
         public void userPlants(string fileName, PlantaLibrary.UserDashboard lib)
         {
-            GetList("..\\..\\"+fileName+".txt");
+            GetList("..\\..\\..\\"+fileName+".txt");
             for (int i = 0; i < allFiles.Count; i++)
             {
                 string[] files = allFiles.ToArray();
@@ -213,5 +213,27 @@ namespace PlantaDAL
         }
         //..GetList(..) = Main reader, Reads the .txt of everything
         //..SetList(..) = Main writer, Writes the .txt of user
+        public void plantWatered(string nickname, string filename)
+        {
+            GetList(filename);
+            string[] files = allFiles.ToArray();
+            string date = DateTime.Today.ToString("dd/MM/yyyy");
+            for (int i = 0; i < files.Length; i++)
+            {
+                string[] splitted = files[i].Split('+');
+                if (splitted[0] == nickname)
+                {
+                    splitted[3] = date;
+                }
+                string joined = string.Join("+", splitted);
+                files[i] = joined;
+
+            }
+            StreamWriter sw = new StreamWriter(filename);
+            for (int i = 0; i < files.Length; i++)
+            {
+                sw.WriteLine(files[i]);
+            }
+        }
     }
 }
