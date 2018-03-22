@@ -142,11 +142,7 @@ namespace PlantNation
             showDashboard();
         }
 
-        private void showDashboard()
-        {
-            this.Panel_content.Controls.Clear();
-            string fileName = lbl_username.Text;
-            PlantaDisplay ui = new PlantaDisplay();
+
         private TextBox txt_nickname = new TextBox();
         private ComboBox combobox = new ComboBox();
 
@@ -201,11 +197,6 @@ namespace PlantNation
             MessageBox.Show("Plant has been added");
         }
 
-        private void lbl_close_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void lbl_delete_Click(object sender, EventArgs e)
         {
             this.Panel_content.Controls.Clear();
@@ -244,7 +235,12 @@ namespace PlantNation
             PlantaDisplay dis = new PlantaDisplay();
             this.Panel_content.Controls.Add(dis.DeletePlant(username, combobox));
         }
-    }
+
+        private void showDashboard()
+        {
+            this.Panel_content.Controls.Clear();
+            string fileName = lbl_username.Text;
+            PlantaDisplay ui = new PlantaDisplay();
 
             GroupBox groupbox1 = new GroupBox();
             GroupBox groupbox2 = new GroupBox();

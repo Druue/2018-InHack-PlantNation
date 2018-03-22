@@ -106,7 +106,6 @@ namespace PlantaUI
             nicknameBox.Location = new Point(255, 60);
             return nicknameBox;
         }
-    }
 
 
         public Control AboutPlantNation()

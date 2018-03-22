@@ -37,8 +37,6 @@ namespace PlantaDAL
             return false;
         }
 
-        //..GetList(..) = Main reader, Reads the .txt of everything
-        //..SetList(..) = Main writer, Writes the .txt of user
         List<string> allFiles = new List<string>();
         public void userPlants(string fileName, PlantaLibrary.UserDashboard lib)
         {
@@ -71,7 +69,6 @@ namespace PlantaDAL
                 reader.Close();
             }
         }
-        List<string> allFiles = new List<string>();
 
         //DELETE PLANTS
         public void DeletePlant(PlantaModel.PlantaLibrary.DeletePlant lib, string username)
@@ -187,23 +184,6 @@ namespace PlantaDAL
             }
 
             return false;
-        }
-
-        public void GetList(string filename)
-        {
-            if (File.Exists(filename))
-            {
-                int row_count = 0;
-
-                StreamReader reader = new StreamReader(filename);
-                while (!reader.EndOfStream)
-                {
-                    string line = reader.ReadLine();
-                    allFiles.Add(line);
-                    row_count++;
-                }
-                reader.Close();
-            }
         }
     }
 }
