@@ -112,6 +112,7 @@
             this.lbl_delete.TabIndex = 6;
             this.lbl_delete.Text = "Delete plant";
             this.lbl_delete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_delete.Click += new System.EventHandler(this.lbl_delete_Click);
             // 
             // lbl_change
             // 
@@ -136,6 +137,7 @@
             this.lbl_add.TabIndex = 4;
             this.lbl_add.Text = "Add plant";
             this.lbl_add.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_add.Click += new System.EventHandler(this.lbl_add_Click);
             // 
             // lbl_Dashboard
             // 
