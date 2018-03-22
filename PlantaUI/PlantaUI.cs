@@ -19,7 +19,7 @@ namespace PlantaUI
         {
             List<Journal> journals = new List<Journal>();
             PlantaDatabase db = new PlantaDatabase();
-            journals = db.DB_getJournal(filename);
+            journals = db.DB_getJournal("..\\..\\..\\"+filename);
 
             
             ListView journalListView = new ListView();
@@ -137,8 +137,8 @@ namespace PlantaUI
         {
             confirm.Text = "Confirm";
             confirm.BackColor = Color.LightGreen;
-            confirm.AutoSize = true;
-            confirm.Location = new Point(300, 200);
+            confirm.Location = new Point(50, 150);
+            confirm.Size = new Size(100, 50);
             return confirm;
         }
 

@@ -148,12 +148,13 @@
             this.lbl_journal.BackColor = System.Drawing.Color.Transparent;
             this.lbl_journal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_journal.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_journal.Location = new System.Drawing.Point(12, 314);
+            this.lbl_journal.Location = new System.Drawing.Point(0, 304);
             this.lbl_journal.Name = "lbl_journal";
-            this.lbl_journal.Size = new System.Drawing.Size(173, 43);
+            this.lbl_journal.Size = new System.Drawing.Size(195, 54);
             this.lbl_journal.TabIndex = 7;
             this.lbl_journal.Text = "Ranks";
             this.lbl_journal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_journal.Click += new System.EventHandler(this.lbl_journal_Click);
             // 
             // lbl_about
             // 
@@ -161,7 +162,7 @@
             this.lbl_about.BackColor = System.Drawing.Color.Transparent;
             this.lbl_about.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_about.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_about.Location = new System.Drawing.Point(12, 365);
+            this.lbl_about.Location = new System.Drawing.Point(12, 364);
             this.lbl_about.Name = "lbl_about";
             this.lbl_about.Size = new System.Drawing.Size(173, 43);
             this.lbl_about.TabIndex = 9;
@@ -175,7 +176,7 @@
             this.lbl_ranks.BackColor = System.Drawing.Color.Transparent;
             this.lbl_ranks.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_ranks.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ranks.Location = new System.Drawing.Point(12, 263);
+            this.lbl_ranks.Location = new System.Drawing.Point(12, 255);
             this.lbl_ranks.Name = "lbl_ranks";
             this.lbl_ranks.Size = new System.Drawing.Size(173, 43);
             this.lbl_ranks.TabIndex = 8;
@@ -183,26 +184,13 @@
             this.lbl_ranks.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_ranks.Click += new System.EventHandler(this.lbl_ranks_Click);
             // 
-            // lbl_journal
-            // 
-            this.lbl_journal.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lbl_journal.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_journal.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_journal.Location = new System.Drawing.Point(14, 329);
-            this.lbl_journal.Name = "lbl_journal";
-            this.lbl_journal.Size = new System.Drawing.Size(195, 54);
-            this.lbl_journal.TabIndex = 7;
-            this.lbl_journal.Text = "Ranks";
-            this.lbl_journal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_journal.Click += new System.EventHandler(this.lbl_journal_Click);
-            // 
             // lbl_delete
             // 
             this.lbl_delete.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbl_delete.BackColor = System.Drawing.Color.Transparent;
             this.lbl_delete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_delete.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_delete.Location = new System.Drawing.Point(12, 212);
+            this.lbl_delete.Location = new System.Drawing.Point(12, 206);
             this.lbl_delete.Name = "lbl_delete";
             this.lbl_delete.Size = new System.Drawing.Size(173, 43);
             this.lbl_delete.TabIndex = 6;
@@ -216,7 +204,7 @@
             this.lbl_change.BackColor = System.Drawing.Color.Transparent;
             this.lbl_change.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_change.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_change.Location = new System.Drawing.Point(12, 161);
+            this.lbl_change.Location = new System.Drawing.Point(12, 157);
             this.lbl_change.Name = "lbl_change";
             this.lbl_change.Size = new System.Drawing.Size(173, 43);
             this.lbl_change.TabIndex = 5;
@@ -229,7 +217,7 @@
             this.lbl_add.BackColor = System.Drawing.Color.Transparent;
             this.lbl_add.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_add.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_add.Location = new System.Drawing.Point(12, 110);
+            this.lbl_add.Location = new System.Drawing.Point(12, 108);
             this.lbl_add.Name = "lbl_add";
             this.lbl_add.Size = new System.Drawing.Size(173, 43);
             this.lbl_add.TabIndex = 4;

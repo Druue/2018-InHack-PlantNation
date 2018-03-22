@@ -40,7 +40,7 @@ namespace PlantaDAL
         public void userPlants(string fileName, PlantaLibrary.UserDashboard lib)
         {
             GetList("..\\..\\..\\"+fileName+".txt");
-            for (int i = 0; i < allFiles.Count; i++)
+            for (int i = 0; i < allFiles.Count ; i++)
             {
                 string[] files = allFiles.ToArray();
                 string[] userPlants = files[i].Split('+');
@@ -48,7 +48,7 @@ namespace PlantaDAL
                 lib.SetName(userPlants[1]);
                 lib.SetInterval(userPlants[2]);
                 lib.SetLastWatered(userPlants[3]);
-                lib.SetIconNr(userPlants[4]);
+                //lib.SetIconNr(userPlants[4]);
             }
 
         }
@@ -96,7 +96,7 @@ namespace PlantaDAL
             }
             reader.Close();
 
-            StreamWriter sw = new StreamWriter("..\\..\\..\\Kim.txt");
+            StreamWriter sw = new StreamWriter("..\\..\\..\\"+username+".txt");
             for (int i = 0; i < userPlants.Count; i++)
             {
                 sw.WriteLine(userPlants[i]);
@@ -166,7 +166,7 @@ namespace PlantaDAL
             // icons 
             string addedLine = string.Join("+", newplant);
 
-            StreamWriter sw = File.AppendText("..\\..\\..\\Kim.txt");
+            StreamWriter sw = File.AppendText("..\\..\\..\\" + username + ".txt");
             sw.WriteLine(addedLine);
             sw.Close();
         }

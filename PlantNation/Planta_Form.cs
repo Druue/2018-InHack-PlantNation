@@ -17,7 +17,6 @@ namespace PlantNation
 {
     public partial class Planta_Form : Form
     {
-        private static Planta_Form instance;
         public Planta_Form()
         {
             InitializeComponent();
@@ -213,6 +212,7 @@ namespace PlantNation
             this.Panel_content.Controls.Add(dis.showBoxTitle(lbl_addBoxTitle));
 
             Button btn_delete = new Button();
+            btn_delete.Location = new Point(300, 300);
             btn_delete.Click += new EventHandler(btn_delete_Clicked);
             this.Panel_content.Controls.Add(dis.showConfirmButton(btn_delete));
         }
@@ -279,19 +279,28 @@ namespace PlantNation
             PictureBox picBox1 = new PictureBox();
             PictureBox picBox2 = new PictureBox();
             PictureBox picBox3 = new PictureBox();
-            picBox1.Location = new Point(5, 40);
-            picBox2.Location = new Point(5, 40);
-            picBox3.Location = new Point(5, 40);
+            picBox1.Location = new Point(5, 10);
+            picBox2.Location = new Point(5, 10);
+            picBox3.Location = new Point(5, 10);
+            picBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            picBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            picBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            picBox1.Height = 80;
+            picBox1.Width = 80;
+            picBox2.Height = 80;
+            picBox2.Width = 80;
+            picBox3.Height = 80;
+            picBox3.Width = 80;
             Button button1 = new Button();
             Button button2 = new Button();
             Button button3 = new Button();
             button1.Location = new Point(430, 27);
             button2.Location = new Point(430, 43);
             button3.Location = new Point(430, 43);
-            button1.Text = "Water me pls";
-            button2.Text = "Water me pls";
-            button3.Text = "Water me pls";
-            button1.Size = new Size(100,50);
+            button1.Text = "Water me";
+            button2.Text = "Water me";
+            button3.Text = "Water me";
+            button1.Size = new Size(100, 50);
             button2.Size = new Size(100, 50);
             button3.Size = new Size(100, 50);
             button1.BackColor = Color.LightSkyBlue;
@@ -312,7 +321,7 @@ namespace PlantNation
                     {
                         labelPlant1.Text = plantNick[i];
                         groupbox1.Controls.Add(labelPlant1);
-                        //picBox1.Image = Properties.Resources.;
+                        picBox1.Image = Properties.Resources.Sprout;
                         groupbox1.Controls.Add(picBox1);
                         groupbox1.Controls.Add(button1);
                         groupboxIndex1 = plantNick[i];
@@ -331,7 +340,7 @@ namespace PlantNation
                     {
                         labelPlant2.Text = plantNick[i];
                         groupbox2.Controls.Add(labelPlant2);
-                        //picBox2.Image = Properties.Resources.;
+                        picBox2.Image = Properties.Resources.Plant_rank;
                         groupbox2.Controls.Add(picBox2);
                         groupbox2.Controls.Add(button2);
                         groupboxIndex2 = plantNick[i];
@@ -342,7 +351,7 @@ namespace PlantNation
                     {
                         labelPlant3.Text = plantNick[i];
                         groupbox3.Controls.Add(labelPlant3);
-                        //picBox3.Image = Properties.Resources.;
+                        picBox3.Image = Properties.Resources.Seed_rank;
                         groupbox3.Controls.Add(picBox3);
                         groupbox3.Controls.Add(button3);
                         groupboxIndex3 = plantNick[i];
