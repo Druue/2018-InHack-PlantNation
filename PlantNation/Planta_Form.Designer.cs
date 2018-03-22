@@ -183,6 +183,19 @@
             this.lbl_ranks.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_ranks.Click += new System.EventHandler(this.lbl_ranks_Click);
             // 
+            // lbl_journal
+            // 
+            this.lbl_journal.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lbl_journal.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_journal.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_journal.Location = new System.Drawing.Point(14, 329);
+            this.lbl_journal.Name = "lbl_journal";
+            this.lbl_journal.Size = new System.Drawing.Size(195, 54);
+            this.lbl_journal.TabIndex = 7;
+            this.lbl_journal.Text = "Ranks";
+            this.lbl_journal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_journal.Click += new System.EventHandler(this.lbl_journal_Click);
+            // 
             // lbl_delete
             // 
             this.lbl_delete.Anchor = System.Windows.Forms.AnchorStyles.Left;

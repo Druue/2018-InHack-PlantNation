@@ -41,7 +41,7 @@ namespace PlantNation
         public void userAuth()
         {
             Panel_content.Controls.Clear();
-
+            Panel_menu.Enabled = false;
             //creation the label with "Welcome button"
             Label authorization = new Label();
             authorization.Visible = true;
@@ -104,6 +104,8 @@ namespace PlantNation
                 else
                 {
                     //the file was created with this name
+                    Panel_menu.Enabled = true;
+                   
                     lbl_username.Text = name;
                     showDashboard();
                 }
@@ -128,6 +130,7 @@ namespace PlantNation
 
                 if (is_exist)
                 {
+                    Panel_menu.Enabled = true;
                     lbl_username.Text = name;
                     showDashboard();
                 }
@@ -391,6 +394,14 @@ namespace PlantNation
             this.lbl_currentTab.Text = "Journal";
             string filename = lbl_username.Text + ".txt";
             Panel_content.Controls.Add(PlantaDisplay.ShowJournal(filename));
+
+
+        }
+
+        private void lbl_journal_Click(object sender, EventArgs e)
+        {
+            Panel_content.Controls.Clear();
+            Panel_content.Controls.Add(PlantaDisplay.ShowRanks());
             
 
         }
