@@ -146,32 +146,73 @@ namespace PlantNation
             string fileName = lbl_username.Text;
             PlantaDisplay ui = new PlantaDisplay();
 
-            GroupBox groupbox1 = new GroupBox();
-            GroupBox groupbox2 = new GroupBox();
-            GroupBox groupbox3 = new GroupBox();
+
             PlantaLibrary.UserDashboard lib = ui.showDashboard(fileName);
 
             List<int> waterEmergency = lib.GetWaterEmergency();
             List<int> waterToday = lib.GetWaterToday();
             List<string> plantNick = lib.GetNick();
+            GroupBox groupbox1 = new GroupBox();
+            GroupBox groupbox2 = new GroupBox();
+            GroupBox groupbox3 = new GroupBox();
+            groupbox1.Location = new Point(10, 10);
+            groupbox2.Location = new Point(10, 80);
+            groupbox3.Location = new Point(10, 160);
 
+            groupbox1.Size = new Size(100, 300);
+            groupbox2.Size = new Size(100, 300);
+            groupbox3.Size = new Size(100, 300);
             Label labelPlant1 = new Label();
             Label labelPlant2 = new Label();
-            int countEmergency = 0;
-            int countToday = 0;
+            Label labelPlant3 = new Label();
+            labelPlant1.Location = new Point(45, 45);
+            labelPlant2.Location = new Point(45, 45);
+            labelPlant3.Location = new Point(45, 45);
+            PictureBox picBox1 = new PictureBox();
+            PictureBox picBox2 = new PictureBox();
+            PictureBox picBox3 = new PictureBox();
+            picBox1.Location = new Point(5, 40);
+            picBox2.Location = new Point(5, 40);
+            picBox3.Location = new Point(5, 40);
+            int boxLimit = 0;
+            int count = 0;
             for (int i = 0; i < plantNick.Count; i++)
             {
-                if (waterEmergency[countEmergency] == i)
+                if (waterEmergency[count] == i && count < 1)
                 {
                     labelPlant1.Text = plantNick[i];
                     groupbox1.Controls.Add(labelPlant1);
+                    picBox1.Image = Properties.Resources.//;
+                    groupbox1.Controls.Add(picBox1);
+                    count++;
                 }
-                else if(waterToday[countToday] == i)
+            }
+            count = 0;
+            for (int i = 0; i < plantNick.Count; i++)
+            {
+                if (waterToday[count] == i && boxLimit < 1)
                 {
                     labelPlant2.Text = plantNick[i];
                     groupbox2.Controls.Add(labelPlant2);
+                    picBox2.Controls.Add();
+                    picBox2.Image = Properties.Resources.;
+                    groupbox2.Controls.Add(picBox2);
+                    boxLimit++;
+                    continue;
+                }
+                if (waterToday[count] == i && boxLimit < 1)
+                {
+                    labelPlant3.Text = plantNick[i];
+                    groupbox3.Controls.Add(labelPlant3);
+                    picBox3.Controls.Add();
+                    picBox3.Image = Properties.Resources.;
+                    groupbox1.Controls.Add(picBox3);
+                    boxLimit++;
+                    continue;
                 }
             }
+
+
             this.Panel_content.Controls.Add(groupbox1);
             this.Panel_content.Controls.Add(groupbox2);
             this.Panel_content.Controls.Add(groupbox3);

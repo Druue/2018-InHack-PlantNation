@@ -21,21 +21,18 @@ namespace PlantaLogic
                 List<string> interval = lib.GetDays();
                 List<int> needWater = new List<int>();
                 List<int> emergencyWater = new List<int>();
-                int countWaterToday = 0;
-                int countEmergency = 0;
+
                 for (int i = 0; i < nickName.Count; i++)
                 {
                     DateTime watered = DateTime.Parse(lastWatered[i]);
                     int difference = watered.DayOfYear - DateTime.Today.DayOfYear;
                     if (difference - int.Parse(interval[i]) == 0)
                     {
-                        needWater[countWaterToday] = i;
-                        countWaterToday++;
+                        needWater.Add(i);
                     }
                     else if (difference - int.Parse(interval[i]) < 0)
                     {
-                        emergencyWater[countEmergency] = i;
-                        countEmergency++;
+                        emergencyWater.Add(i);
                     }
                 }
                 lib.SetEmergencyList(emergencyWater);
