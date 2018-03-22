@@ -34,7 +34,7 @@ namespace PlantaModel
 
             public void SetName(string name)
             {
-                plantNick.Add(name);
+                plantName.Add(name);
             }
             public List<string> GetName()
             {
