@@ -147,6 +147,7 @@
             this.lbl_Dashboard.TabIndex = 3;
             this.lbl_Dashboard.Text = "Dashboard";
             this.lbl_Dashboard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_Dashboard.Click += new System.EventHandler(this.lbl_Dashboard_Click);
             // 
             // Panel_header
             // 
