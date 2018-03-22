@@ -250,6 +250,9 @@ namespace PlantNation
             List<int> waterEmergency = lib.GetWaterEmergency();
             List<int> waterToday = lib.GetWaterToday();
             List<string> plantNick = lib.GetNick();
+        
+
+    
 
             Label labelPlant1 = new Label();
             Label labelPlant2 = new Label();
@@ -278,6 +281,14 @@ namespace PlantNation
             PlantaDisplay display = new PlantaDisplay();
             this.Panel_content.Controls.Add(display.AboutPlantNation());
             this.Panel_content.Location = new System.Drawing.Point(200, 150);
+        }
+        private void lbl_ranks_Click(object sender, EventArgs e)
+        {
+            Panel_content.Controls.Clear();
+            //  string filename = lbl_username.Text + ".txt";
+            Panel_content.Controls.Add(PlantaDisplay.ShowJournal("Nadia.txt"));
+
+
         }
     }
 }
