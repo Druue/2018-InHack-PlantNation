@@ -8,10 +8,39 @@ using System.Threading.Tasks;
 /// </summary>
 namespace PlantaModel
 {
-    public class PlantaModel
+    public class PlantaLibrary
     {
         //Public class NAME
         //SetName
         //GetName
+
+        //PLANT DELETE
+        public class DeletePlant
+        {
+            List<string> plantNicknames = new List<string>();
+
+            public void SetPlantNickname(string plantnickname)
+            {
+                plantNicknames.Add(plantnickname);
+            }
+            public List<string> GetPlantNickname()
+            {
+                return plantNicknames;
+            }
+        }
+        //PLANT ADD
+        public class AllPlantNames
+        {
+            List<string> plantNames = new List<string>();
+
+            public void SetPlantName(string plantname)
+            {
+                plantNames.Add(plantname);
+            }
+            public List<string> GetPlantName()
+            {
+                return plantNames;
+            }
+        }
     }
 }

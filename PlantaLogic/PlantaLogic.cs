@@ -9,7 +9,7 @@ using PlantaModel;
 /// </summary>
 namespace PlantaLogic
 {
-    public class PlantaLogic
+    public class PlantaCalc
     {
     }
 }
