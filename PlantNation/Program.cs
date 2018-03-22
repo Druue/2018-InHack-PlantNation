@@ -17,6 +17,14 @@ namespace PlantNation
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Planta_Form());
+         //userAuth();
+
+
+
+            //..string fileName = txtbox.Text
+            //..To Db
+            //..Db asks does this filename exist?
+            //..return bool?
 
             //..User accepted
             //Send username to .form
