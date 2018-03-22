@@ -8,7 +8,10 @@ using System.Threading.Tasks;
 /// </summary>
 namespace PlantaModel
 {
-    public class Class1
+    public class PlantaModel
     {
+        //Public class NAME
+        //SetName
+        //GetName
     }
 }

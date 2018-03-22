@@ -40,10 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="PlantaUI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PlantaDAL\PlantaDAL.csproj">
+      <Project>{2d7c12b5-89fa-4847-bc77-e67e2b777133}</Project>
+      <Name>PlantaDAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PlantaLogic\PlantaLogic.csproj">
       <Project>{dc0628d4-ab4a-41d6-b9c9-3e4cd824b7fd}</Project>
       <Name>PlantaLogic</Name>
