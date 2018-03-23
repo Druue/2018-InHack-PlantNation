@@ -8,6 +8,7 @@ using PlantaLogic;
 using PlantaDAL;
 using System.Windows.Forms;
 using System.Drawing;
+using static PlantaModel.PlantaLibrary;
 /// <summary>
 /// Design and Control declarations
 /// </summary>
@@ -66,12 +67,13 @@ namespace PlantaUI
         public static Control ShowRanks()
         {
             Label ranks = new Label();
-
+            
             ranks.Height = 200;
             ranks.Width = 500;
             ranks.Location = new Point(100, 100);
             ranks.Text = " 9000 -> Master of the plantivere \n 1000 -> God of plants \n 500 -> Serious plantkeeper \n 250 -> Plant \n 100 -> Sprout \n 50 -> Seed \n 0 -> Peasant \n 10 -> Murderer";
-            ranks.Font = new Font("Segou UI Emoji", 10);
+            ranks.Font = new Font("Segoe UI Emoji", 12, FontStyle.Bold);
+            ranks.ForeColor = Color.Black;
 
             return ranks;
         }
@@ -199,6 +201,29 @@ namespace PlantaUI
 
 
             return lib;
+        }
+        public Control ChangePlant(string username, ComboBox plantNicks)
+        {
+            //Declaration of all classes
+            PlantaDatabase db = new PlantaDatabase();
+            PlantaLibrary.ChangePlant model = new PlantaLibrary.ChangePlant();
+            //connect to the DAL
+            try
+            {
+                Cursor.Current = Cursors.AppStarting;
+                db.ChangePlant(model, username);
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show(exp.Message + "\nErrorLog.txt has been has been saved in the bin folder", "An error has occured (?°?°)?? ???", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //return c;
+            }
+
+            //collect all the date
+            List<string> allUserPlantNicknames = model.GetPlantNickname();
+            plantNicks.DataSource = allUserPlantNicknames;
+            plantNicks.Location = new Point(50, 60);
+            return plantNicks;
         }
     }
 }

@@ -210,6 +210,7 @@
             this.lbl_change.TabIndex = 5;
             this.lbl_change.Text = "Change plant";
             this.lbl_change.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_change.Click += new System.EventHandler(this.lbl_change_Click);
             // 
             // lbl_add
             // 

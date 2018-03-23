@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using PlantaLogic;
 using PlantaModel;
 using System.IO;
+using static PlantaModel.PlantaLibrary;
 /// <summary>
 /// Connection to the .txt files
 /// </summary>
@@ -229,6 +230,57 @@ namespace PlantaDAL
             {
                 sw.WriteLine(files[i]);
             }
+        }
+        //CHANGE PLANTS
+        public void ChangePlant(PlantaModel.PlantaLibrary.ChangePlant lib, string username)
+        {
+            //GetList("..\\..\\..\\" + username + ".txt");
+            GetList("..\\..\\..\\Kim.txt");
+            char delim = '+';
+            for (int i = 0; i < allFiles.Count; i++)
+            {
+                string[] numberStrings = allFiles[i].Split(delim);
+                lib.SetPlantNickname(numberStrings[0]);
+                lib.SetWaterInterval(numberStrings[2]);
+            }
+        }
+
+        public void ChangeUserPlant(string nickname, string username, string waterInterval)
+        {
+            //check the wiki for the selectednewplant
+            //save the lines in an array
+            //string join the array into the userfile together with the nickname
+            //plantnickname, plantname, waterinterval, lastwatered, iconNr
+            string plant_change = "";
+
+            StreamReader reader = new StreamReader("..\\..\\..\\Plant_Wiki.txt");
+            while (!reader.EndOfStream)
+            {
+                string line = reader.ReadLine();
+                if (WordInLine(line, nickname))
+                {
+                    plant_change = line;
+                    break;
+                }
+            }
+            reader.Close();
+            //Split plant wikiline
+            char delim = '+';
+            string[] numberStrings = plant_change.Split(delim);
+
+            //Fill new line
+            string[] changedplant = new string[4];
+            changedplant[0] = nickname;
+            changedplant[1] = numberStrings[0];
+            changedplant[2] = waterInterval;
+            changedplant[3] = DateTime.Today.ToString("dd/MM/yyyy");
+            // icons 
+            string addedLine = string.Join("+", changedplant);
+
+            StreamWriter sw = File.AppendText("..\\..\\..\\Kim.txt");
+            sw.WriteLine(addedLine);
+            sw.Close();
+
         }
     }
 }

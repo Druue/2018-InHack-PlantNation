@@ -410,6 +410,7 @@ namespace PlantNation
         private void lbl_journal_Click(object sender, EventArgs e)
         {
             Panel_content.Controls.Clear();
+            lbl_currentTab.Text = "Ranks";
             Panel_content.Controls.Add(PlantaDisplay.ShowRanks());
             
 
@@ -418,6 +419,99 @@ namespace PlantNation
         private void gradientPanel_background_Paint(object sender, PaintEventArgs e)
         {
            gradientPanel_background.SendToBack();
+        }
+        TextBox input_interval = new TextBox();
+        private void lbl_change_Click(object sender, EventArgs e)
+        {
+            this.Panel_content.Controls.Clear();
+            this.lbl_currentTab.Text = "Change a Plant";
+            string username = lbl_username.Text;
+
+            Label intervalbl = new Label();
+            intervalbl.Location = new Point(25, 150);
+            intervalbl.Text = "New interval (days):";
+
+            this.Panel_content.Controls.Add(intervalbl);
+            this.Panel_content.Controls.Add(input_interval);
+
+            input_interval.Visible = true;
+
+            input_interval.Location = new Point(200, 150);
+
+            string new_interval = input_interval.Text;
+
+
+            PlantaDisplay dis = new PlantaDisplay();
+            this.Panel_content.Controls.Add(dis.ChangePlant(username, combobox));
+
+            Label lbl_addBoxTitle = new Label();
+            this.Panel_content.Controls.Add(dis.showBoxTitle(lbl_addBoxTitle));
+
+            Button btn_change = new Button();
+            btn_change.Text = "Make Changes";
+            btn_change.Click += new EventHandler(btn_change_Clicked);
+            btn_change.Location = new Point(100, 200);
+            this.Panel_content.Controls.Add(dis.showConfirmButton(btn_change));
+        }
+
+        private void btn_change_Clicked(object sender, EventArgs e)
+        {
+            PlantaDatabase db = new PlantaDatabase();
+
+
+
+            string plantnickname = combobox.Text;
+            string username = lbl_username.Text;
+            string waterInterval = input_interval.Text;
+
+            try
+            {
+                db.ChangeUserPlant(plantnickname, username, waterInterval);
+            }
+
+            catch (Exception exp)
+            {
+                MessageBox.Show(exp.Message, "An error has occured (?°?°)?? ???", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            MessageBox.Show("Plant has been changed!");
+            combobox.DataSource = null;
+            PlantaDisplay dis = new PlantaDisplay();
+            this.Panel_content.Controls.Add(dis.DeletePlant(username, combobox));
+        }
+
+        private void lbl_change_Click_1(object sender, EventArgs e)
+        {
+
+            this.Panel_content.Controls.Clear();
+            this.lbl_currentTab.Text = "Change a Plant";
+            string username = lbl_username.Text;
+
+            Label intervalbl = new Label();
+            intervalbl.Location = new Point(25, 150);
+            intervalbl.Text = "New interval (days):";
+
+            this.Panel_content.Controls.Add(intervalbl);
+            this.Panel_content.Controls.Add(input_interval);
+
+            input_interval.Visible = true;
+
+            input_interval.Location = new Point(200, 150);
+
+            string new_interval = input_interval.Text;
+
+
+            PlantaDisplay dis = new PlantaDisplay();
+            this.Panel_content.Controls.Add(dis.ChangePlant(username, combobox));
+
+            Label lbl_addBoxTitle = new Label();
+            this.Panel_content.Controls.Add(dis.showBoxTitle(lbl_addBoxTitle));
+
+            Button btn_change = new Button();
+            btn_change.Text = "Make Changes";
+            btn_change.Click += new EventHandler(btn_change_Clicked);
+            btn_change.Location = new Point(100, 200);
+            this.Panel_content.Controls.Add(dis.showConfirmButton(btn_change));
         }
     }
 }
